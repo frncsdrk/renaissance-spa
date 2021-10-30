@@ -2,9 +2,14 @@
   "name": "renaissance-spa",
   "version": "0.1.0",
   "description": "renaissance spa adpater",
-  "main": "spa.js",
+  "main": "dist/Adapter.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:compile",
+    "build:compile": "coffee -c -t -m -o dist/ src/",
+    "test": "npm run test:raw | tap-spec",
+    "test:compile": "coffee -c -t -o test/js test/",
+    "test:nyc": "npm run test:compile && nyc npm test",
+    "test:raw": "npm run test:compile && tape test/js/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/frncsdrk/renaissance-spa/issues"
   },
-  "homepage": "https://github.com/frncsdrk/renaissance-spa#readme"
+  "homepage": "https://github.com/frncsdrk/renaissance-spa#readme",
+  "devDependencies": {
+    "@randomgoods/tap-spec": "^5.0.1",
+    "coffeescript": "^2.6.1",
+    "nyc": "^15.1.0",
+    "renaissance": "^0.6.16",
+    "tape": "^5.3.1"
+  }
 }

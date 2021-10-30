@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "src/Adapter.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAa,CAAA,YAAA;AAAA;AAAA,MAAA,UAAA;AAEP,EAAA,UAAA,GAAN,MAAA,UAAA,CAAA;AACE,IAAA,WAAa,GAAA;AACX,WAAA,KAAA,GAAa,EAAb;AACA,WAAA,IAAA,GACE;AAAA,6BAAqB;AAArB,OADF;AAEA;AAJJ;;;;;;;;;AAYE,IAAA,QAAU,CAAA,IAAA,EAAA,KAAA,EAAA;aACR,KAAK,KAAL,CAAA,IAAA,IAAmB,K;AAbvB;;;;;;;;AAoBE,IAAA,IAAM,CAAA,IAAA,EAAA;AACR,UAAA,SAAA,EAAA,aAAA;AAAI,MAAA,aAAA,GAAgB,WAAW,CAAC,KAAZ,CAAA,QAAA,CAA2B,IAAI,CAA/B,iBAAA,CAAhB;AACA,MAAA,SAAA,GAAY,WAAW,CAAC,KAAZ,CAAA,QAAA,CAA2B,KAAK,KAAL,CAA3B,IAA2B,CAA3B,EAA4C,CAA5C,CAAZ;AAEA,MAAA,aAAa,CAAb,OAAA,CAAsB,UAAA,EAAA,EAAA,GAAA,EAAA;AAC1B,YAAA,IAAA;AAAM,QAAA,IAAA,GAAO,aAAa,CAAA,GAAA,CAApB;eACA,IAAI,CAAC,KAAL,CAAA,OAAA,GAAqB,M;AAFvB,OAAA;aAKA,SAAS,CAAC,KAAV,CAAA,OAAA,GAA0B,O;AATtB;;AArBR,GAAM;AAgCN,EAAA,MAAM,CAAN,OAAA,GAAiB,UAAjB;CAlCa,E,IAAA,C,IAAA",
+  "sourcesContent": [
+    "# spa adapter\n\nclass SpaAdapter\n  constructor: () ->\n    this.pages = {};\n    this.meta =\n      'containerSelector': '.spa-container'\n    this\n\n  ###\n  register a spa container\n  @param {string} name\n  @param {string} slctr\n  @returns {*}\n  ###\n  register: (name, slctr) ->\n    this.pages[name] = slctr\n\n  ###\n  go to given page\n  @param {string} name\n  @returns {*}\n  ###\n  goto: (name) ->\n    spaContainers = renaissance.utils.getNodes(meta.containerSelector)\n    container = renaissance.utils.getNodes(this.pages[name])[0]\n\n    spaContainers.forEach((el, idx) ->\n      cont = spaContainers[idx]\n      cont.style.display = 'none'\n    )\n\n    container.style.display = 'block'\n\nmodule.exports = SpaAdapter\n"
+  ],
+  "sourceRoot": ".."
+}
