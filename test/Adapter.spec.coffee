@@ -7,6 +7,12 @@ test("Adapter can be instantiated", (t) =>
   t.end()
 )
 
+test("Adapter has _getNodes method", (t) =>
+  adapter = new Adapter()
+  t.ok(typeof adapter._getNodes == "function")
+  t.end()
+)
+
 test("Adapter has register method", (t) =>
   adapter = new Adapter()
   t.ok(typeof adapter.register == "function")
