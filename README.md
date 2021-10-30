@@ -11,16 +11,19 @@ const { r } = require('renaissance')
 const SpaAdapter = require('renaissance-spa')
 const adapter = r.registerAdapter('spa', SpaAdapter)
 
-// TODO: Fix usage
-adapter.tmpl('foo', 'bar');
-console.log(lsa.get('foo'));
+adapter.register('foo', '#bar')
+adapter.goto('foo')
 ```
 
 ## API
 
-### adapter.tmpl({string} text, {object} data)
+### adapter.register({string} name, {string} selector)
 
-Create a template
+Register a SPA container
+
+### adapter.goto({string} name)
+
+Go to registered page with specified name
 
 ## Contributing
 
