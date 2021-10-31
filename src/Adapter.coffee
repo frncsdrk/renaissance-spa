@@ -2,9 +2,9 @@
 
 class SpaAdapter
   constructor: () ->
-    this.pages = {};
     this.meta =
       'containerSelector': '.spa-container'
+    this.pages = {}
     this
 
   ###
@@ -49,7 +49,7 @@ class SpaAdapter
   @returns {*}
   ###
   goto: (name) ->
-    spaContainers = this._getNodes(meta.containerSelector)
+    spaContainers = this._getNodes(this.meta.containerSelector)
     container = this._getNodes(this.pages[name])[0]
 
     spaContainers.forEach((el, idx) ->

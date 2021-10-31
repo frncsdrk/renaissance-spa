@@ -4,10 +4,10 @@
   var SpaAdapter;
   SpaAdapter = class SpaAdapter {
     constructor() {
-      this.pages = {};
       this.meta = {
         'containerSelector': '.spa-container'
       };
+      this.pages = {};
       this;
     }
     /*
@@ -58,7 +58,7 @@
 
     goto(name) {
       var container, spaContainers;
-      spaContainers = this._getNodes(meta.containerSelector);
+      spaContainers = this._getNodes(this.meta.containerSelector);
       container = this._getNodes(this.pages[name])[0];
       spaContainers.forEach(function (el, idx) {
         var cont;
