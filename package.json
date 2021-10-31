@@ -1,6 +1,6 @@
 {
   "name": "renaissance-spa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "renaissance spa adpater",
   "main": "dist/Adapter.js",
   "scripts": {
