@@ -49,7 +49,7 @@ class SpaAdapter
   @returns {*}
   ###
   goto: (name) ->
-    spaContainers = this._getNodes(this.meta.containerSelector)
+    spaContainers = Array.from(this._getNodes(this.meta.containerSelector))
     container = this._getNodes(this.pages[name])[0]
 
     spaContainers.forEach((el, idx) ->
