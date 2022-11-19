@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/frncsdrk/renaissance-spa#readme",
   "devDependencies": {
-    "@randomgoods/tap-spec": "^5.0.1",
-    "coffeescript": "^2.6.1",
+    "@randomgoods/tap-spec": "^5.0.3",
+    "coffeescript": "^2.7.0",
     "nyc": "^15.1.0",
-    "renaissance": "^0.6.17",
-    "tape": "^5.5.3"
+    "renaissance": "^0.6.19",
+    "tape": "^5.6.1"
   },
   "dependencies": {}
 }
